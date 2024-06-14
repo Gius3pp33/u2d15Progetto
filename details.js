@@ -1,5 +1,5 @@
 
-// Funzione per mostrare/nascondere il caricamento (spinner)
+// Funzione per mostrare e nascondere il caricamento (spinner)
 const isLoading = bool => {
     const spinner = document.querySelector(".spinner-border");
   
