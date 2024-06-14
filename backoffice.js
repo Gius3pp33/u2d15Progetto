@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
    
  // se siamo in modalità modifica, carico i dettagli del prodotto
     if (isEditing) {
-        document.getElementById("form-title").textContent = "Modifica Prodotto";
+        document.getElementById("form-title").textContent = "Edit";
         fetchProduct(id);
     }
  // Gestisco il submit del form
@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Gestisco il reset del form
     resetButton.addEventListener("click", function(event) {
-        if (!confirm("Sei sicuro di voler resettare il form?")) {
+        if (!confirm("Are you sure you want to reset the form?")) {
             event.preventDefault();
         }
     });
    // Gestisco l'eliminazione del prodotto
     deleteButton.addEventListener("click", function() {
-        if (confirm("Sei sicuro di voler eliminare questo prodotto?")) {
+        if (confirm("Are you sure you want delete this product?")) {
             deleteProduct(id);
         }
     });
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => {
             if (response.ok) {
                 window.location.href = "/";
-            } throw new Error("Errore" + response.statusText);
+            } throw new Error("Error" + response.statusText);
             
         })
         .catch(error => {

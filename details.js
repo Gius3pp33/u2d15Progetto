@@ -20,7 +20,7 @@ const isLoading = bool => {
     if (productId) {
         fetchProductDetails(productId, adminToken);
     } else {
-        displayError("ID del prodotto non trovato.");
+        displayError("ID not founded");
     }
 });
 // Funzione per ottenere i dettagli di un prodotto dal server
@@ -36,14 +36,14 @@ function fetchProductDetails(productId, token) {
             return response.json();
         }
         //La proprietà response.statusText  restituisce lo stato testuale della risposta HTTP restituita dal server
-        throw new Error("Errore nella risposta: " + response.statusText);
+        throw new Error("Answer Error: " + response.statusText);
     })
     .then(product => {
         displayProduct(product);
     })
     .catch(error => {
         console.log(error);
-        displayError("Si è verificato un errore durante il caricamento dei dettagli del prodotto.");
+        displayError("An error occurred while loading the products");
     });
 }
 // Funzione per visualizzare i dettagli del prodotto
