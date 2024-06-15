@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const cardText = document.createElement("p");
             cardText.className = "card-text";
             cardText.textContent = product.description;
+            const briefDescription = product.description.split(" ").slice(0, 15).join(" ") + "...";
+            cardText.textContent = briefDescription;
+
+
+           
     
             // marca del prodotto
             const cardBrand = document.createElement("p");
@@ -103,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cardBody.appendChild(cardPrice);
             cardBody.appendChild(detailsLink);
             cardBody.appendChild(editLink);
+           
     
             cardDiv.appendChild(img);
             cardDiv.appendChild(cardBody);
