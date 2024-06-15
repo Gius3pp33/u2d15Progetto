@@ -36,16 +36,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Gestisco il reset del form
     resetButton.addEventListener("click", function(event) {
-        if (!confirm("Are you sure you want to reset the form?")) {
-            event.preventDefault();
-        }
+        event.preventDefault();
+        const resetModal = new bootstrap.Modal(document.getElementById('resetModal')); // creo un'istanza del modale
+        resetModal.show();
+         // aggiungo un eventlistener al pulsante di conferma del reset nel modale per nasconderlo o resettare
+        document.getElementById("confirmReset").addEventListener("click", function() {
+            form.reset();
+            resetModal.hide();
+        });
     });
    // Gestisco l'eliminazione del prodotto
-    deleteButton.addEventListener("click", function() {
-        if (confirm("Are you sure you want delete this product?")) {
-            deleteProduct(id);
-        }
+   deleteButton.addEventListener("click", function() {
+    const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+    deleteModal.show();
+    document.getElementById("confirmDelete").addEventListener("click", function() {
+        deleteProduct(id);
+        deleteModal.hide();
     });
+});
      // Funzione per ottenere i dettagli del prodotto dal server
     function fetchProduct(id) {
         fetch("https://striveschool-api.herokuapp.com/api/product/" + id, {
