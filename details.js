@@ -51,8 +51,11 @@ function displayProduct(product) {
     document.getElementById("product-name").textContent = product.name;
     document.getElementById("product-description").textContent = product.description;
     document.getElementById("product-brand").textContent = "Brand: " + product.brand;
-    document.getElementById("product-price").textContent = "Prezzo: €" + product.price;
+    document.getElementById("product-price").textContent = "Price: €" + product.price;
     document.getElementById("product-image").src = product.imageUrl;
+    const homeLink = "./index.html";
+    document.getElementById("butt").href = homeLink;
+   
     isLoading(false);
 }
 // Funzione per visualizzare un messaggio di errore
