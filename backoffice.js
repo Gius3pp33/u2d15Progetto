@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const readToken = "yoyoyoyo";
     const adminToken = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjZiZmFmYzdjMjM5YzAwMTUyZjRiNDkiLCJpYXQiOjE3MTgzNTI2MzYsImV4cCI6MTcxOTU2MjIzNn0.J7ROrPs_jTcL9BwIuBCEo7LTZ_nxzvbXfDMcBC9uAB4";
     
-    console.log("RESOURCE ID:", id);
+    
 
 
    
